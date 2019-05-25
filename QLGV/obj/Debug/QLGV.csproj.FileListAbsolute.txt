@@ -1,0 +1,10 @@
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\bin\Debug\QLGV.exe.config
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\bin\Debug\QLGV.exe
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\bin\Debug\QLGV.pdb
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.csprojAssemblyReference.cache
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.frmQuanLy.resources
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.Properties.Resources.resources
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.csproj.GenerateResource.cache
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.exe
+C:\Users\Nguyen Duc Thinh\source\repos\QLGV\QLGV\obj\Debug\QLGV.pdb
