@@ -43,6 +43,9 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtKhen = new System.Windows.Forms.TextBox();
+            this.txtKyLuat = new System.Windows.Forms.TextBox();
+            this.txtQuaTrinh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +137,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(666, 384);
+            this.label5.Location = new System.Drawing.Point(656, 384);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 17);
             this.label5.TabIndex = 10;
@@ -142,7 +145,7 @@
             // 
             // txtIdGV
             // 
-            this.txtIdGV.Location = new System.Drawing.Point(669, 404);
+            this.txtIdGV.Location = new System.Drawing.Point(659, 404);
             this.txtIdGV.Name = "txtIdGV";
             this.txtIdGV.Size = new System.Drawing.Size(48, 22);
             this.txtIdGV.TabIndex = 11;
@@ -160,7 +163,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(760, 384);
+            this.label6.Location = new System.Drawing.Point(264, 442);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 13;
@@ -168,16 +171,40 @@
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(763, 404);
+            this.txtGender.Location = new System.Drawing.Point(267, 462);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(48, 22);
+            this.txtGender.Size = new System.Drawing.Size(182, 22);
             this.txtGender.TabIndex = 14;
+            // 
+            // txtKhen
+            // 
+            this.txtKhen.Location = new System.Drawing.Point(486, 461);
+            this.txtKhen.Name = "txtKhen";
+            this.txtKhen.Size = new System.Drawing.Size(140, 22);
+            this.txtKhen.TabIndex = 15;
+            // 
+            // txtKyLuat
+            // 
+            this.txtKyLuat.Location = new System.Drawing.Point(659, 462);
+            this.txtKyLuat.Name = "txtKyLuat";
+            this.txtKyLuat.Size = new System.Drawing.Size(170, 22);
+            this.txtKyLuat.TabIndex = 16;
+            // 
+            // txtQuaTrinh
+            // 
+            this.txtQuaTrinh.Location = new System.Drawing.Point(761, 404);
+            this.txtQuaTrinh.Name = "txtQuaTrinh";
+            this.txtQuaTrinh.Size = new System.Drawing.Size(100, 22);
+            this.txtQuaTrinh.TabIndex = 17;
             // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 526);
+            this.Controls.Add(this.txtQuaTrinh);
+            this.Controls.Add(this.txtKyLuat);
+            this.Controls.Add(this.txtKhen);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnInsert);
@@ -219,6 +246,9 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.TextBox txtKhen;
+        private System.Windows.Forms.TextBox txtKyLuat;
+        private System.Windows.Forms.TextBox txtQuaTrinh;
     }
 }
 

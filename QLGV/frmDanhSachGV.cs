@@ -26,7 +26,7 @@ namespace QLGV
         private void btnShow_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from GiaoVien",con);
+            SqlDataAdapter da = new SqlDataAdapter("select * from ChiTietGV",con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dtGridViewGV.DataSource = dt;
@@ -35,26 +35,37 @@ namespace QLGV
 
         private void dtGridViewGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIdGV.Text = dtGridViewGV.CurrentRow.Cells[0].Value.ToString();
-            txtTenGV.Text = dtGridViewGV.CurrentRow.Cells[1].Value.ToString();
-            txtBirthday.Text = dtGridViewGV.CurrentRow.Cells[2].Value.ToString();
-            txtGender.Text = dtGridViewGV.CurrentRow.Cells[3].Value.ToString();
-            txtAddress.Text = dtGridViewGV.CurrentRow.Cells[4].Value.ToString();
-            txtEmail.Text = dtGridViewGV.CurrentRow.Cells[5].Value.ToString();
-            
-            
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            con.Open();
-            string cm = string.Format("insert into GiaoVien values('{0}',N'{1}','{2}','{3}',N'{4}','{5}' )",
-                txtIdGV.Text, txtTenGV.Text, txtBirthday.Text, txtGender.Text, txtAddress.Text, txtEmail.Text);
-            SqlCommand sc = new SqlCommand(cm, con);
-            sc.CommandType = CommandType.Text;
-            sc.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Thêm dữ liệu thành công");
+            
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_insert_chitietgv";
+            cmd.Parameters.Add("@id_gv", SqlDbType.Int).Value = txtIdGV.Text.Trim();
+            cmd.Parameters.Add("@Chuc_vu", SqlDbType.NVarChar).Value = txtTenGV.Text.Trim();
+            cmd.Parameters.Add("@Don_vi", SqlDbType.NVarChar).Value = txtAddress.Text.Trim();
+            cmd.Parameters.Add("@Cac_mon_dam_nhiem", SqlDbType.NVarChar).Value = txtBirthday.Text.Trim();
+            cmd.Parameters.Add("@Huong_nghien_cuu", SqlDbType.NVarChar).Value = txtEmail.Text.Trim();
+            cmd.Parameters.Add("@Trinh_do_ngoai_ngu", SqlDbType.NVarChar).Value = txtGender.Text.Trim();
+            cmd.Parameters.Add("@Khen_thuong", SqlDbType.NVarChar).Value = txtKhen.Text.Trim();
+            cmd.Parameters.Add("@Ky_luat", SqlDbType.NVarChar).Value = txtKyLuat.Text.Trim();
+            cmd.Parameters.Add("@Qua_trinh_dao_tao", SqlDbType.NVarChar).Value = txtQuaTrinh.Text.Trim();
+            cmd.Connection = con;
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
