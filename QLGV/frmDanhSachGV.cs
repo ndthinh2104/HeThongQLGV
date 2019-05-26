@@ -17,7 +17,7 @@ namespace QLGV
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("server=ROBBIE-NGUYEN\\THINHNGUYEN;database=HeThongQLGV;integrated security = SSPI");
+        SqlConnection con = new SqlConnection("server=DESKTOP-3AH9ABD\\SQLEXPRESS;database=HeThongQLGV;integrated security = SSPI");
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -25,10 +25,19 @@ namespace QLGV
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "xemkhoa";
+            cmd.Parameters.Add("@tengv", SqlDbType.NVarChar).Value = "Nguyễn Văn Anh";
+            cmd.Connection = con;
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from ChiTietGV",con);
+            SqlDataReader reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            if (reader.HasRows)
+            {
+                dt.Load(reader);
+            }
+            
             dtGridViewGV.DataSource = dt;
             con.Close();
         }
